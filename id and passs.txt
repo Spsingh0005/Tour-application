@@ -1,0 +1,6 @@
+username - robinsingh199815
+pass - GRyzHrl2ycprT847
+
+connection string - mongodb+srv://robinsingh199815:GRyzHrl2ycprT847@node-revision.fcjcdtf.mongodb.net/
+
+mongodb+srv://robinsingh199815:<password>@node-revision.fcjcdtf.mongodb.net/
