@@ -284,6 +284,9 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 exports.isLoggedIn = async (req, res, next) => {
   try {
     if (req.cookies.jwt) {
+      if (req.cookies.jwt === "loggedout") {
+        return next();
+      }
       const token = req.cookies.jwt;
 
       // validate the token

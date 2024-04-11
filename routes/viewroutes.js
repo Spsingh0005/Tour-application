@@ -15,6 +15,9 @@ app.route("/login").get(viewsController.login);
 app.route("/me").get(viewsController.userAccount);
 
 app.route("/submit-user-data").get(viewsController.submitUserData);
+app
+  .route("/project-structure")
+  .get(authController.protect, viewsController.projectStructure);
 
 app
   .route("/manage-tours")

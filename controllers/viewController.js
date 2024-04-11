@@ -76,3 +76,13 @@ exports.submitUserData = async (req, res) => {
     user: updatedUser,
   });
 };
+
+exports.projectStructure = async (req, res) => {
+  try {
+    res.status(200).render("projectStructure", {
+      title: "Project Structure",
+    });
+  } catch (error) {
+    res.json(error);
+  }
+};

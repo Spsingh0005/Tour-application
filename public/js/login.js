@@ -1,14 +1,14 @@
 /*eslint-disable*/
 
 import axios from "axios";
-import { hideAlert, showAlert } from "./alert";
+import { showAlert } from "./alert";
 
 export const login = async (email, password) => {
   try {
     const res = await axios({
       method: "POST",
-      url: "/api/users/login",
-      // 127.0.0.1:3000/api/users/login
+      url: "api/users/login",
+
       data: {
         email: email,
         password: password,
@@ -30,13 +30,11 @@ export const logout = async () => {
   try {
     const res = await axios({
       method: "GET",
-      url: "/api/users/logout",
+      url: "api/users/logout",
     });
-
+    console.log(res);
     if (res.data.status === "success") {
       location.assign("/");
-
-      // if (res.data.status === "success") location.reload(true);
     }
   } catch (error) {
     alert("Error logging out ! Try again.");
@@ -47,7 +45,7 @@ export const logout = async () => {
 
 export const updateSettings = async (data) => {
   try {
-    const url = "/api/users/updateMe";
+    const url = "api/users/updateMe";
     const res = await axios({
       method: "POST",
       url,
@@ -64,7 +62,7 @@ export const updateSettings = async (data) => {
 
 export const updatePassword = async (data) => {
   try {
-    const url = "/api/users/update-password";
+    const url = "api/users/update-password";
     const res = await axios({
       method: "PATCH",
       url,
